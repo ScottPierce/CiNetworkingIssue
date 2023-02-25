@@ -9,7 +9,7 @@ on:
 
 jobs:
   not-docker-in-docker:
-    name: Success Example
+    name: Not Docker In Docker
     runs-on: [ ubuntu-latest ]
     # Succeeds because it's not docker-in-docker
 #    container:
@@ -26,7 +26,7 @@ jobs:
         run: ./gradlew :run
 
   tilt-ci:
-    name: tilt ci
+    name: Docker In Docker
     runs-on: [ ubuntu-latest ]
     container:
       image: devitllc/coretto-build:17

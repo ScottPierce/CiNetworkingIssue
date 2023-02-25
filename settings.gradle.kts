@@ -1,1 +1,1 @@
-rootProject.name = "ci-networking-issue"
+rootProject.name = "docker-in-docker-networking-error"
