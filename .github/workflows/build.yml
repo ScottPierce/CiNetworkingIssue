@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-tilt:
+  failure-example:
     name: Build Tilt
     runs-on: [ ubuntu-latest ]
     container:
@@ -21,3 +21,13 @@ jobs:
       - name: Tilt CI
         run: tilt ci --timeout 15m --debug
 
+  success-example:
+    name: Build Tilt
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Tilt CI
+        run: tilt ci --timeout 15m --debug
