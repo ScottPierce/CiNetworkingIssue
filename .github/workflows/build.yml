@@ -9,7 +9,7 @@ on:
 
 jobs:
   failure-example:
-    name: Build Tilt
+    name: Failure Example
     runs-on: [ ubuntu-latest ]
     container:
       image: devitllc/coretto-build:17
@@ -22,7 +22,7 @@ jobs:
         run: tilt ci --timeout 15m --debug
 
   success-example:
-    name: Build Tilt
+    name: Success Example
     runs-on: [ ubuntu-latest ]
 
     steps:
