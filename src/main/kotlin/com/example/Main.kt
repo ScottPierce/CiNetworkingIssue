@@ -8,7 +8,7 @@ import java.util.*
 fun main() {
     val dataSource = HikariDataSource(
         HikariConfig().apply {
-            jdbcUrl = "jdbc:postgresql://localhost:8090/example"
+            jdbcUrl = "jdbc:postgresql://localhost:8090/"
             connectionTimeout = 10_000
             dataSourceProperties = Properties().apply {
                 setProperty("user", "postgres")

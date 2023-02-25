@@ -1,4 +1,4 @@
-docker_compose('./docker-compose.yml', project_name = 'adcentral-databases')
+docker_compose('./docker-compose.yml', project_name = 'example-databases')
 dc_resource('postgres', labels=["Database"])
 
 local_resource(
