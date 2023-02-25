@@ -8,22 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  failure-example:
-    name: Failure Example
-    runs-on: [ ubuntu-latest ]
-    container:
-      image: devitllc/coretto-build:17
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: docker-compose up
-        run: docker-compose up -d
-
-      - name: ./gradlew :run
-        run: ./gradlew :run
-
   success-example:
     name: Success Example
     runs-on: [ ubuntu-latest ]
