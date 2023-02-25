@@ -18,12 +18,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Tilt CI
-        run: tilt ci --timeout 15m --debug
+      - name: docker-compose up
+        run: docker-compose up -d
+
+      - name: ./gradlew :run
+        run: ./gradlew :run
 
   success-example:
     name: Success Example
     runs-on: [ ubuntu-latest ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: docker-compose up
+        run: docker-compose up -d
+
+      - name: ./gradlew :run
+        run: ./gradlew :run
+
+  tilt-ci:
+    name: tilt ci
+    runs-on: [ ubuntu-latest ]
+    container:
+      image: devitllc/coretto-build:17
 
     steps:
       - name: Checkout code
