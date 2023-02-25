@@ -6,7 +6,7 @@ import org.flywaydb.core.Flyway
 import java.util.*
 import javax.sql.DataSource
 import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.seconds
 
 fun main() {
     val dataSource = createDataSource()
@@ -39,7 +39,7 @@ private fun createDataSource(): DataSource {
                 }
             )
         } catch (t: Throwable) {
-            val isTimeout = (System.currentTimeMillis() - start).milliseconds > 1.minutes
+            val isTimeout = (System.currentTimeMillis() - start).milliseconds > 20.seconds
             if (isTimeout) {
                 throw t
             } else {
