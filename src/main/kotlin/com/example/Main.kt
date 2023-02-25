@@ -27,7 +27,7 @@ private fun createDataSource(): DataSource {
         try {
             return HikariDataSource(
                 HikariConfig().apply {
-                    jdbcUrl = "jdbc:postgresql://localhost:8090/"
+                    jdbcUrl = "jdbc:postgresql://localhost:8090/example"
                     connectionTimeout = 10_000
                     dataSourceProperties = Properties().apply {
                         setProperty("user", "postgres")
